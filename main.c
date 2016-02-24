@@ -8,6 +8,5 @@ void main(void) {
 	idt_init();
 	pit_init();
 	set_interrupt_enable_flag();
-
 	while(1);	
 }

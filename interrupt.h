@@ -8,7 +8,7 @@
 
 #define ICV_SLAVE  	0x28
 #define ICV_MASTER 	0x20
-#define EOI 	0x20
+#define EOI 	(1<<5)
 #define MCOMMAND 	(0x20)
 #define MDATA    	(0x20 + 1)
 #define SCOMMAND  	(0xA0)

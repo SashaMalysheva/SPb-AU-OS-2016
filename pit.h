@@ -4,7 +4,7 @@
 #define PP_CONTROL 	0x43
 #define PP_DATA	 	0x40
 
-#define MAX_NUM	0xFFFF
+#define MAX_NUM	((1<<16)-1)
 
 #define CMND_FOR_CONTROL 0b00110100
 

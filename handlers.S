@@ -1,5 +1,5 @@
     .code64
-    .global handler_empty, handler_pop, handler_pit
+    .global handler_empty, handler_pop, handler
     .extern pit_handler
 
 handler:
@@ -12,7 +12,7 @@ handler:
     push %r10
     push %r11
 
-    call handler
+    call pit
     
     push %r11
     push %r10
