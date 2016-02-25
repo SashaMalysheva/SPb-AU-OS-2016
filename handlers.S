@@ -1,6 +1,7 @@
     .code64
     .global handler_empty, handler_pop, handler
-    .extern pit_handler
+    .extern pit
+
 
 handler:
     push %rax
@@ -14,19 +15,21 @@ handler:
 
     call pit
     
-    push %r11
-    push %r10
-    push %r9
-    push %r8
-    push %rdi
-    push %rsi
-    push %rcx
-    push %rax
-
+    pop %r11
+    pop %r10
+    pop %r9
+    pop %r8
+    pop %rdi
+    pop %rsi
+    pop %rcx
+    pop %rax
+    
     iretq
+
 
 handler_empty:
     iretq
+
 
 handler_pop:
     add $8, %rsp

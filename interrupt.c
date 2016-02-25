@@ -24,10 +24,10 @@ void idt_init() {
 	for (int i = 0; i < ICOUNT; i++)
 		descriptor_init(i, (uint64_t) &handler_empty,
 			IFLAG_NOW | IFLAG_INT64);
-//
-//	for (int i = 0; i < COUNT_OF_ERRORS; i++)
-//		descriptor_init(ERROR_NUM[i], (uint64_t) &handler_pop,
-//			IFLAG_NOW | IFLAG_INT64);
+
+	for (int i = 0; i < COUNT_OF_ERRORS; i++)
+		descriptor_init(ERROR_NUM[i], (uint64_t) &handler_pop,
+			IFLAG_NOW | IFLAG_INT64);
 
 	set_idt(&idt);
 }
